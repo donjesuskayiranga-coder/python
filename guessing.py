@@ -1,7 +1,7 @@
-number = 12
+number = 67
 attempt = 0
 for i in range(5):
-     guess = int(input("Guess the number:"))
+     guess = float(input("Guess the number:"))
      if guess > number:  
            print("Too high") 
      elif guess < number:
