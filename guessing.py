@@ -1,5 +1,7 @@
 number = 67
+
 attempt = 0
+
 for i in range(5):
      guess = float(input("Guess the number:"))
      if guess > number:  
@@ -11,5 +13,6 @@ for i in range(5):
        print(f"correct! You got it in {attempt} attempts")
        break
      if attempt == 5:
+
       print(f"Game Over! The number was {number}")
      
