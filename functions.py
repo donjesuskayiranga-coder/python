@@ -99,7 +99,6 @@ students = [
 print(students[0])
 print(students[0][0])
 print(students[0][1])
-
 numbers2 = []
 for number in range(5):
    numbers1 = float(input("Enter a number"))
@@ -114,6 +113,54 @@ if  num in numbers2:
    print("Found!")
 else:
    print("Not Found!")
+   #dictionaries
+   #dictionary - access by name
+person = {"name": "Jean" , "age": 20, "city": "Kigali"}
+print(person["name"])
+#format is "Key": value
+#dictionary methods
+print(person.keys())
+print(person.values())
+print(person.items())
+print(len(person))
+students = {
+   "Jean":{"age":20, "grade":"A"},
+   "Alice": {"age":22, "grade": "B"},
+   "Bob": { "age": 19, "grade": "C"}
+
+}
+print(students["Jean"])
+print(students["Jean"]["grade"])
+print(students["Alice"]["age"])
+
+student = {"name":"KAYIRANGA",
+            "age":17, "grade": "A", 
+            "city":"Kigali", }
+
+for key ,value in student.items():
+   print(f"{key}: {value}")
+new_city = input("Enter a new city:")
+student["city"] = new_city
+student["score"] = 95
+student.pop("age")
+print(student)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
