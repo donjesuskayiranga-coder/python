@@ -150,38 +150,27 @@ print(name.upper())
 print(name.lower())
 print(name.title())
 print(name.capitalize())
-
 #stripping whitespace:
-
 name ="    Jean   "
-
 print(name.strip())
 print(name.lstrip())
 print(name.rstrip())
-
 # Finding and replacing:
-
 sentence = "I love Python and Python is great"
 print(sentence.find("Python"))
 print(sentence.count("Python"))
 print(sentence.replace("Python", "coding"))
-
-
 name = "Jean123"
 
 print(name.isalpha())
 print(name.isnumeric())
 print(name.isalnum())
-
 age = "20"
 print(age.isnumeric()) #True -all numbers
-
 #splitting and joining:
-
 sentence = " I love Python"
 words = sentence.split(" ")
 print(words)  #["I", "love", "Python"]
-
 words = ["I", "love", "Python"]
 sentence = " ".join(words) #joins with space
 print(sentence) # " I love Python"
@@ -189,6 +178,24 @@ email = "jean@gmail.com"
 print(email.startswith("jean")) #True
 print(email.endswith(".com")) #True
 print(email.endswith(".org")) #false
+#multiline Strings
+
+message = """"
+Hello Jean,
+Welcome to Python.
+keep Coding every day!
+"""
+print(message)
+names = input("Enter ur full names:")
+print(names.upper())
+print(names.title())
+print(len(names))
+
+
+
+
+
+
 
 
 
