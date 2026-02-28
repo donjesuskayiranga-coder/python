@@ -23,7 +23,6 @@ def is_even(number):
      return True
     else:
         return False
-    
 def grade(score):
    if score >= 90:
       return "A"
@@ -35,7 +34,6 @@ def grade(score):
     return "D"
    else:
       return "F"
-   
 result = float(input("Enter a number"))
 result2 = float(input("Enter another number:"))
 result3 = add(result, result2)
@@ -84,7 +82,6 @@ if "jean" in names:
    print("Jean exists")
 
    #getting part of list
-
 numbers = [3,1,4,1,5,9,2,6]
 print(numbers[1:4])
 print(numbers[:3]) #from index 0 to 2
@@ -127,7 +124,6 @@ students = {
    "Jean":{"age":20, "grade":"A"},
    "Alice": {"age":22, "grade": "B"},
    "Bob": { "age": 19, "grade": "C"}
-
 }
 print(students["Jean"])
 print(students["Jean"]["grade"])
@@ -144,6 +140,65 @@ student["city"] = new_city
 student["score"] = 95
 student.pop("age")
 print(student)
+
+#string Methods
+#case methods:
+
+name = "jean kayiranga"
+
+print(name.upper())
+print(name.lower())
+print(name.title())
+print(name.capitalize())
+
+#stripping whitespace:
+
+name ="    Jean   "
+
+print(name.strip())
+print(name.lstrip())
+print(name.rstrip())
+
+# Finding and replacing:
+
+sentence = "I love Python and Python is great"
+print(sentence.find("Python"))
+print(sentence.count("Python"))
+print(sentence.replace("Python", "coding"))
+
+
+name = "Jean123"
+
+print(name.isalpha())
+print(name.isnumeric())
+print(name.isalnum())
+
+age = "20"
+print(age.isnumeric()) #True -all numbers
+
+#splitting and joining:
+
+sentence = " I love Python"
+words = sentence.split(" ")
+print(words)  #["I", "love", "Python"]
+
+words = ["I", "love", "Python"]
+sentence = " ".join(words) #joins with space
+print(sentence) # " I love Python"
+email = "jean@gmail.com"
+print(email.startswith("jean")) #True
+print(email.endswith(".com")) #True
+print(email.endswith(".org")) #false
+
+
+
+
+
+
+
+
+
+
 
 
 
