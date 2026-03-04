@@ -52,6 +52,7 @@ print(grade(score1)
 names = ["Jean", "Alice"]
 
 names.append("Bob") #adds to the end
+
 names.insert(1, "Mary") # adds to position 1
 
 #removing items:
@@ -64,6 +65,7 @@ names.pop(0)
 numbers = [3,1,4,1,5,9,2,6]
 
 print(len(numbers)) # how many items
+
 print(sum(numbers))
 print(min(numbers))
 print(max(numbers))
@@ -115,6 +117,7 @@ else:
 person = {"name": "Jean" , "age": 20, "city": "Kigali"}
 print(person["name"])
 #format is "Key": value
+
 #dictionary methods
 print(person.keys())
 print(person.values())
@@ -151,11 +154,13 @@ print(name.lower())
 print(name.title())
 print(name.capitalize())
 #stripping whitespace:
+
 name ="    Jean   "
 print(name.strip())
 print(name.lstrip())
 print(name.rstrip())
 # Finding and replacing:
+
 sentence = "I love Python and Python is great"
 print(sentence.find("Python"))
 print(sentence.count("Python"))
@@ -168,6 +173,7 @@ print(name.isalnum())
 age = "20"
 print(age.isnumeric()) #True -all numbers
 #splitting and joining:
+
 sentence = " I love Python"
 words = sentence.split(" ")
 print(words)  #["I", "love", "Python"]
