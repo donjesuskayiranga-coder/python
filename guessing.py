@@ -1,4 +1,4 @@
-number = 90
+number = 70
 attempt = 0
 for i in range(5):
      guess = float(input("Guess the number:"))
