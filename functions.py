@@ -228,10 +228,8 @@ describe("Student", "math", "Science", name= "Jean", age=20)
 message = "Hello!"
 def greet():
    print(message)
-
 greet()
 print(message)
-
 #global keyword
 #used fro changing a global variable from inside the function
 count = 0
@@ -241,14 +239,45 @@ def increment():
    increment()
    increment()
    print(count)
-
  #lambda functions
  #is a tiny function written in one line 
 square = lambda x: x * x
 print(square(5))
-
 add = lambda a, b: a + b
 print(add(3, 4))
+students = [
+   {"name": "Jean", "score": 85},
+   {"name":"Alice", "score": 92},
+   {"name": "Bob", "Score": 78}
+]
+sorted_students = sorted(students, key=lambda s: s["score"])
+for student in sorted_students:
+   print(f"{student["name"]}: {student["score"]}")
+
+   def countdown(n):
+      if n == 0:
+         print("Done!")
+         return
+      print(n)
+      countdown(n - 1)
+countdown(5)
+#return with nothing after it, it means stop the function and go back
+def factorial(n):
+   if n == 1:
+      return 1
+   return n * factorial(n -1)
+print(factorial(5)) 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
