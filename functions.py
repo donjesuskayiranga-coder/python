@@ -238,15 +238,23 @@ def factorial(n):
 print(factorial(5)) 
 def total(*numbers):
    sum = 0
-   for numbers in numbers:
+   for number in numbers:
       sum += number
-      return sum
-   print(total(1,2,3,4))
+   return sum
+print(total(1,2,3,4))
 print(total(2,4))
 def describe(**kwargs):
    for key, value in kwargs.items():
-      print(f"{key}: {value}")
-describe( )
+      print(f"{key}:{value}")
+describe(name="KAYIRANGA", email= "donjesuskayiranga@gmail.com" , grade= "A")
+def factori(n):
+   if n == 1:
+    return 1
+   return n * factori(n - 1)
+print(factori(8))
+
+
+
 
 
 
