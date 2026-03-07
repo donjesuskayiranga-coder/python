@@ -185,7 +185,6 @@ print(email.startswith("jean")) #True
 print(email.endswith(".com")) #True
 print(email.endswith(".org")) #false
 #multiline Strings
-
 message = """"
 Hello Jean,
 Welcome to Python.
@@ -196,6 +195,62 @@ names = input("Enter ur full names:")
 print(names.upper())
 print(names.title())
 print(len(names))
+print(names.replace(" ", ""))
+print(names.lower().startswith("k"))
+words = names.split(" ")
+print(words)
+# *args: accept any number of arguments
+def add(*args):
+   total = 0
+   for number in args:
+      total+= number
+      return total
+   
+print(add(1,2))
+print(add(1,2,3)) 
+print(add(1,2,3,4,5))
+
+#**kwargs: accept Any Number of keywords Arguments
+
+def print_info(**kwargs):
+   for key, value in kwargs.items():
+      print(f"{key}: {value}")
+
+print_info(name="Jean", age=20, city="Kigali")   
+
+def describe(title, *args, **kwargs):
+   print(f"Title: {title}")
+   print(f"Items: {args}")
+   print(f"Details: {kwargs}")
+describe("Student", "math", "Science", name= "Jean", age=20)
+#scope
+#global scope
+message = "Hello!"
+def greet():
+   print(message)
+
+greet()
+print(message)
+
+#global keyword
+#used fro changing a global variable from inside the function
+count = 0
+def increment():
+   global count
+   count += 1
+   increment()
+   increment()
+   print(count)
+
+ #lambda functions
+ #is a tiny function written in one line 
+square = lambda x: x * x
+print(square(5))
+
+add = lambda a, b: a + b
+print(add(3, 4))
+
+
 
 
 
