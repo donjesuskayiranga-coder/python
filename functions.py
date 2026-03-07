@@ -45,44 +45,29 @@ print(is_even(number1))
 score1 = float(input("Enter ur Score:"))
 print(grade(score1)
       )
-
-
 #listing methods
-
 names = ["Jean", "Alice"]
-
 names.append("Bob") #adds to the end
-
 names.insert(1, "Mary") # adds to position 1
-
 #removing items:
-
 names = ["Jean", "Alice","Bob", "Alice"]
 names.remove("Alice") #remove the first occurrence of Alice
 names.pop() #removes last item
 names.pop(0)
-
 numbers = [3,1,4,1,5,9,2,6]
-
 print(len(numbers)) # how many items
-
 print(sum(numbers))
 print(min(numbers))
 print(max(numbers))
-
 numbers.sort()
-
 numbers.reverse()
-
 print(numbers.count(1))
 #looping through a list
 names = ["Jean", "Alice","Bob"]
-
 for name in names:
    print(f"Hello {name}!")
 if "jean" in names:
    print("Jean exists")
-
    #getting part of list
 numbers = [3,1,4,1,5,9,2,6]
 print(numbers[1:4])
@@ -117,7 +102,6 @@ else:
 person = {"name": "Jean" , "age": 20, "city": "Kigali"}
 print(person["name"])
 #format is "Key": value
-
 #dictionary methods
 print(person.keys())
 print(person.values())
@@ -131,11 +115,9 @@ students = {
 print(students["Jean"])
 print(students["Jean"]["grade"])
 print(students["Alice"]["age"])
-
 student = {"name":"KAYIRANGA",
             "age":17, "grade": "A", 
             "city":"Kigali", }
-
 for key ,value in student.items():
    print(f"{key}: {value}")
 new_city = input("Enter a new city:")
@@ -143,37 +125,30 @@ student["city"] = new_city
 student["score"] = 95
 student.pop("age")
 print(student)
-
 #string Methods
 #case methods:
-
 name = "jean kayiranga"
-
 print(name.upper())
 print(name.lower())
 print(name.title())
 print(name.capitalize())
 #stripping whitespace:
-
 name ="    Jean   "
 print(name.strip())
 print(name.lstrip())
 print(name.rstrip())
 # Finding and replacing:
-
 sentence = "I love Python and Python is great"
 print(sentence.find("Python"))
 print(sentence.count("Python"))
 print(sentence.replace("Python", "coding"))
 name = "Jean123"
-
 print(name.isalpha())
 print(name.isnumeric())
 print(name.isalnum())
 age = "20"
 print(age.isnumeric()) #True -all numbers
 #splitting and joining:
-
 sentence = " I love Python"
 words = sentence.split(" ")
 print(words)  #["I", "love", "Python"]
@@ -199,25 +174,20 @@ print(names.replace(" ", ""))
 print(names.lower().startswith("k"))
 words = names.split(" ")
 print(words)
-# *args: accept any number of arguments
+#*args: accept any number of arguments
 def add(*args):
    total = 0
    for number in args:
       total+= number
       return total
-   
 print(add(1,2))
 print(add(1,2,3)) 
 print(add(1,2,3,4,5))
-
 #**kwargs: accept Any Number of keywords Arguments
-
 def print_info(**kwargs):
    for key, value in kwargs.items():
       print(f"{key}: {value}")
-
-print_info(name="Jean", age=20, city="Kigali")   
-
+print_info(name = "Jean", age=20, city = "Kigali")   
 def describe(title, *args, **kwargs):
    print(f"Title: {title}")
    print(f"Items: {args}")
@@ -253,7 +223,6 @@ students = [
 sorted_students = sorted(students, key=lambda s: s["score"])
 for student in sorted_students:
    print(f"{student["name"]}: {student["score"]}")
-
    def countdown(n):
       if n == 0:
          print("Done!")
@@ -267,6 +236,21 @@ def factorial(n):
       return 1
    return n * factorial(n -1)
 print(factorial(5)) 
+def total(*numbers):
+   sum = 0
+   for numbers in numbers:
+      sum += number
+      return sum
+   print(total(1,2,3,4))
+print(total(2,4))
+def describe(**kwargs):
+   for key, value in kwargs.items():
+      print(f"{key}: {value}")
+describe( )
+
+
+
+    
 
 
 
