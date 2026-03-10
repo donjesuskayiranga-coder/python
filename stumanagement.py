@@ -5,6 +5,7 @@ def save(students):
        json.dump(students, file)
 def load():
     try:
+
         with open("students.json", "r") as file:
             return json.load(file)
     except:
@@ -48,7 +49,6 @@ def delete_student(students):
                  print(f"{name} deleted successfully!")
                  return
          print("Student not found!")
-
 def update_grade(students):
              name = input("Enter name to update: ")
              for student in students:
