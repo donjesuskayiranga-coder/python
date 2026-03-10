@@ -27,7 +27,6 @@ class BankAccount:
 account1 = BankAccount("Achille", 500000)
 account2 = BankAccount("GOA", 450000)
 print(account1)
-
 account1.deposit(4000)
 account1.withdraw(2000)
 print(account1.get_balance())
