@@ -2,6 +2,8 @@
 import requests
 import urllib3
 import sys
+
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # Also allowpass the target as an argument
 TARGET = sys.argv[1] if len(sys.argv) > 1 else "https://127.0.0.1:443"
