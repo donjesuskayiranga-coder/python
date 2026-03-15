@@ -1,7 +1,7 @@
 import hashlib
 
 # 1. Your target hash
-target = "9c6dc857128385a7c584e43cf0b7e10b17c8847895818f2ed0140a0091e87e16"
+target = "3f3cf727f7b93c65f3f4022b276503938ad30098b720259e3016304c57c8da44"
 
 # 2. Your full list of cheeses (I'm using a small sample, keep your full list in your file!)
 raw_cheese_data = """
