@@ -9,7 +9,6 @@ for i in range(5):
      attempt += 1
      if  number == guess:
        print(f"correct! You got it in {attempt} attempts")
-
        break
      if attempt == 5:
       print(f"Game Over! The number was {number}")
