@@ -31,12 +31,9 @@ USAGE:
 import ast, sys, time, socket
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
-
 HOST = "lonely-island.picoctf.net"
 PORT = 53820      # ← update if your instance uses a different port
 KEY_LEN = 32
-
-
 class Conn:
     def __init__(self):
         self.s = socket.create_connection((HOST, PORT), timeout=20)
@@ -56,14 +53,11 @@ class Conn:
         if isinstance(d, str): d = d.encode()
         self.s.sendall(d + b"\n")
     def close(self): self.s.close()
-
-
 def lll_solve(equations):
     """Recover 32-byte key from (coefficients, dot_product) equations via LLL."""
     m = len(equations)
     A = [eq[0] for eq in equations]
     b = [eq[1] for eq in equations]
-
     try:
         from sage.all import Matrix, ZZ
         # Kannan embedding: x = y + 128, y in [-128,127]
@@ -78,7 +72,6 @@ def lll_solve(equations):
         for j in range(KEY_LEN):      M[m+j, m+j] = N
         for i in range(m):            M[dim-1, i] = (-b2[i]) % S
         M[dim-1, dim-1] = 1
-
         print("[*] Running LLL via SageMath...")
         for row in M.LLL():
             y = list(row)[m:m+KEY_LEN]
@@ -92,7 +85,6 @@ def lll_solve(equations):
         return None
     except ImportError:
         pass
-
     # numpy fallback (only works if matrix rank == 32)
     try:
         import numpy as np
@@ -108,8 +100,6 @@ def lll_solve(equations):
     except ImportError:
         print("[-] numpy not available either")
     return None
-
-
 def attempt():
     conn = Conn()
     try:
@@ -129,7 +119,6 @@ def attempt():
             h   = line[sep+3:-2]
             trusted.append((vec, h))
             print(f"  trusted len={len(vec)}: {vec[:3]}{'...' if len(vec)>3 else ''}")
-
         conn.recvuntil(b"========================================================\n")
         equations = []
         for i, (vec, h) in enumerate(trusted):
@@ -145,7 +134,6 @@ def attempt():
             for j,v in enumerate(vec[:KEY_LEN]): coeffs[j] = abs(v)
             equations.append((coeffs, dp))
             print(f"  eq {i}: dp={dp}")
-
         # Check for unit vectors (lucky case)
         known = {}
         for coeffs, dp in equations:
@@ -155,13 +143,11 @@ def attempt():
                 if dp%c==0 and 0<=dp//c<=255:
                     known[j]=dp//c
                     print(f"[+] Direct: key[{j}]={known[j]}")
-
         key = None
         if len(known)==KEY_LEN:
             key = bytes(known[j] for j in range(KEY_LEN))
         else:
             key = lll_solve(equations)
-
         if not key:
             return None
         print(f"Key: {key.hex()}")
@@ -174,8 +160,6 @@ def attempt():
             return None
     finally:
         conn.close()
-
-
 for n in range(1, 200):
     print(f"\n── Attempt {n} ──")
     try:
