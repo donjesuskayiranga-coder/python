@@ -7,6 +7,7 @@ for i in range(5):
      elif guess < number:
             print("Too low")     
      attempt += 1
+     
      if  number == guess:
        print(f"correct! You got it in {attempt} attempts")
        break
