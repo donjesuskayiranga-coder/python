@@ -26,5 +26,6 @@ if __name__ == "__main__":
         print("Usage: python3 solve.py [TARGET_URL]")
         print("Example: python3 solve.py https://lonely-island.picoctf.net:12345")
         sys.exit(0)
+        
     exploit()
   
