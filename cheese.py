@@ -604,27 +604,20 @@ Weichkaese
 Whitestone Farmhouse
 Woodside Cabecou
 Yarra Valley Pyramid
-
 """ 
-
 def ultimate_cracker():
     cheese_list = [line.strip() for line in raw_cheese_data.splitlines() if line.strip()]
     print(f"Logic Check: Testing {len(cheese_list)} cheeses with both String and Byte salts...")
-
     for cheese in cheese_list:
         # Try variants: lowercase, no spaces, etc.
         variants = [cheese, cheese.lower(), cheese.replace(" ", ""), cheese.lower().replace(" ", "")]
-        
         for name in set(variants):
             name_bytes = name.encode('utf-8')
-            
             for i in range(256):
                 # Format A: Salt as a Hex String (e.g., '42')
                 salt_str = hex(i)[2:].zfill(2)
-                
                 # Format B: Salt as a Raw Byte (e.g., b'\x42')
                 salt_byte = bytes([i])
-
                 # The 4 Combinations a Pro checks:
                 attempts = [
                     name_bytes + salt_str.encode(), # cheese42
@@ -632,10 +625,8 @@ def ultimate_cracker():
                     name_bytes + salt_byte,         # cheese + binary byte
                     salt_byte + name_bytes          # binary byte + cheese
                 ]
-
                 for attempt in attempts:
                     guess_hash = hashlib.sha256(attempt).hexdigest()
-                    
                     if guess_hash == target:
                         print("\n" + "!"*30)
                         print(f"MATCH FOUND!")
@@ -644,7 +635,5 @@ def ultimate_cracker():
                         print(f"Input used: {attempt}")
                         print("!"*30)
                         return
-
     print("\nNo match found. Are you sure this is the right target hash for this level?")
-
 ultimate_cracker()
