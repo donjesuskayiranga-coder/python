@@ -38,10 +38,8 @@ result = float(input("Enter a number"))
 result2 = float(input("Enter another number:"))
 result3 = add(result, result2)
 print(result3)
-
 number1 = float(input("Enter a number:"))
 print(is_even(number1))
-
 score1 = float(input("Enter ur Score:"))
 print(grade(score1)
       )
@@ -252,6 +250,53 @@ def factori(n):
     return 1
    return n * factori(n - 1)
 print(factori(8))
+#file handling
+file = open("filename.txt", "mode")
+
+#writing file
+file = open("names.txt", "w")
+file.write("Jean\n")
+file.write("Alice\n")
+file.write("Bob\n")
+file.close()
+
+with open("names.txt", "w") as file:
+   file.write("Jean\n")
+   file.write("Alice\n")
+   file.write("Bob\n")
+
+   with open("names.txt", "r") as file:
+      content = file.read()
+      print(content)
+
+      # Read all lines into a list
+with open("names.txt", "r") as file:
+   lines = file.readlines()
+   print(lines)
+
+   # Loop through lines
+   with open("names.txt", "r") as file:
+      for line in file:
+         print(line.strip()) #strip removes the \n
+
+
+         #Appending to a file
+         with open("names.txt" , "a") as file:
+            file.write("David\n")
+            file.write("Mary\n")
+
+            #check if a file exists
+
+            import os
+
+            if os.path.exists("names.txt"):
+               print("File exists!")
+            else:
+               print("File not found!")
+               
+
+
+
 
 
 
