@@ -6,6 +6,7 @@ with open("student.json", "w") as file:
 with open("student.json", "r") as file:
     loaded_student = json.load(file)
 print(loaded_student)
+
 print(loaded_student["name"])
 #writing and Reading a List to a File
 students = ["Jean", "Alice", "Bob", "David"]
@@ -19,7 +20,7 @@ with open("students.txt", "w") as file:
         print(students_from_file)        
 
 
-        
+
        
 
 
