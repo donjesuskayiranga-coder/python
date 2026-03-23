@@ -1,5 +1,4 @@
 import json
-
 student = {"name": "Jean", "age": 20 , "grade": "A"}
 with open("student.json", "w") as file:
     json.dump(student, file)
