@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import argparse
 import json
 import re
@@ -55,6 +54,7 @@ def upload_file(base_url, filename, content_type, data):
         raise RuntimeError("upload response did not include a Location header")
     match = re.search(r"/paper/(\d+)", location)
     if not match:
+        
         raise RuntimeError(f"could not parse paper id from redirect {location!r}")
     return match.group(1)
 def pdf_escape_literal(text):
