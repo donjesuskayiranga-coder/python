@@ -32,6 +32,7 @@ def grade(score):
       return "C"
    elif score >= 60:
     return "D"
+   
    else:
       return "F"
 result = float(input("Enter a number"))
