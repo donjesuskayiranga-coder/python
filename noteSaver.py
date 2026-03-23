@@ -12,6 +12,5 @@ while True:
         save_note(note)
     elif choice == "2":
         read_notes()
-        
     elif choice == "3":
         break       
