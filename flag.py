@@ -21,6 +21,7 @@ with open(CHEESE_FILE, "r", encoding="utf-8") as f:
 # ----- Connect & guess -----
 def guess_cheese():
     while True:
+        
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print(f"[+] Connecting to {HOST}:{PORT}...")
