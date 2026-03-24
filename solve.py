@@ -9,6 +9,7 @@ factors = factorint(n)
 print("Factors:", factors)
 
 phi = 1
+
 for p, exp in factors.items():
  phi *= (p - 1) * (p ** (exp - 1))
 
