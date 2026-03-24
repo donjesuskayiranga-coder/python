@@ -9,6 +9,7 @@ def read_students():
     with open("student.txt" , "r") as file:
         for line in file:
             print(line.strip())
+
 students = []
 for i in range(1,4):     
     name = input(f"Enter student {i}: ")
@@ -17,4 +18,5 @@ for i in range(1,4):
     read_students()
 new_student = input("Enter a new student: ")
 append_student(new_student) 
+
 read_students()                     
