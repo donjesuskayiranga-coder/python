@@ -9,7 +9,6 @@ def load():
             return json.load(file)
     except:
         return []
-     
 def show_menu():
     print("\n ===== Student Management System =====")
     print("1. Add a student")
@@ -27,14 +26,12 @@ def add_student(students):
     print("DEBUG - reached this line")
     save(students)
     print(f"{name} added successfully!")
-
 def view_students(students):
     if len(students) == 0:
         print("No students yet!")    
         return 
     for i, student in enumerate(students,1):
      print(f"{i}. Name: {student['name']} | Age: {student['age']} | Grade: {student['grade']}")
-
 def search_student(students):
          name = input("Enter a name to search: ")
          for student in students:
@@ -42,7 +39,6 @@ def search_student(students):
                  print(f"Found! Name: {student['name']} | Age: {student['age']} | Grade: {student['grade']}")
                  return
          print("student not found!")
-
 def delete_student(students):
          name = input("Enter name to delete: ")
          for student in students:
