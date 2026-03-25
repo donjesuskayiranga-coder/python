@@ -291,6 +291,40 @@ with open("names.txt", "r") as file:
                print("File exists!")
             else:
                print("File not found!")
+
+#error handling
+print(10/0) #ZeroDivisionError
+print(int("hello")) #ValueError
+print(name) #NameError -not defined
+my_list = [1,2,3]
+print(my_list[10]) #IndexError -out of range
+
+try:
+   result = 10/0
+except ZeroDivisionError:
+   print("You can't divide by zero")
+
+try:
+   number = int(input("Enter a number:"))
+   result = 10/number
+
+except Exception as e:
+   print("something went wrong: {e}")
+#else runs when no error occurred
+# finally runs always even the error occur   
+#creating errors
+
+def check_age(age):
+   if age < 0:
+      raise ValueError("Age cannot be negative")
+try:
+   check_age(-5)
+except ValueError as e:
+   print(e)
+
+
+
+
                
 
 
