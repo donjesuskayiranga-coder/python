@@ -5,6 +5,7 @@ def save_note(note):
 def read_notes():
     with open("notes.txt", "r") as file:
         for line in file:print(line.strip()) 
+        
 while True:
     choice = input("1. Add note 2. Read notes 3. Quit: ")
     if choice == "1":
