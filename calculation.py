@@ -4,7 +4,6 @@ import math
 try:
  num1 = float(input("Enter a number: "))
  num2 = float(input("Enter another:"))
-
  operation = input("enter operation(+,-,*,/)")
 
  if operation == "+":
@@ -23,7 +22,6 @@ try:
     else:
      print(f"squareroot : {math.sqrt(result)}")
      
-
  elif operation == "*":
     result = num1 * num2
     print(f"result: {result}")
@@ -32,7 +30,6 @@ try:
     else:
      print(f"squareroot : {math.sqrt(result)}")
     
-
  elif operation == "/":
     result = num1 / num2
     print(f"result: {result}")
@@ -41,9 +38,6 @@ try:
     else:
      print(f"squareroot : {math.sqrt(result)}")
     
-
-
-
 except ZeroDivisionError:
    print("you can't divide by zero enter another number!😂") 
 
