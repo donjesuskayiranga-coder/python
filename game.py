@@ -8,7 +8,6 @@ def guessing_game():
         try:
             guess = int(input("Enter a number(1-100): "))
             attempts += 1
-
             if guess > secret:
                 print("too high")
             elif guess < secret:
@@ -16,9 +15,8 @@ def guessing_game():
             else:
                 print(f"Correct! you got it in {attempts} attempts!")
                 break
-
         except ValueError:
             print("Enter a valid number !") 
-
+            
 guessing_game()                       
 
